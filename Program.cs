@@ -4,24 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sumofdigits
+namespace palindrome
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int  sum=0, r;
-            Console.WriteLine("Enter the value of n:");
-           int  n =Convert.ToInt32(Console.ReadLine());
-            while (n > 0)
+            Console.WriteLine("Enter a String ");
+            string n = Console.ReadLine();
+            char[] nArray = n.ToCharArray();
+            Array.Reverse(nArray);
+            string reverse = new string(nArray);
+            if (n.Equals(reverse))
+
             {
-                r = n % 10;
-                sum = sum + r;
-                n = n / 10;
+                Console.WriteLine("Given String is a palindrome");
             }
-            Console.WriteLine($"The sum of the digits of given number is: {sum}");
-            Console.ReadLine();
+            else
+
+            {
+                Console.WriteLine("Given string is not a palindrome");
+            }
+            Console.ReadKey();
+
+
 
         }
     }
 }
+
