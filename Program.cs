@@ -4,32 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace csharpfun
+namespace Evennum
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Multiplication table
             int i, n;
-            Console.WriteLine("Enter the number");
-            n = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\n");
-           // logic
-            for (i=1; i<=20; i++)
-            {
-                Console.WriteLine("{0}*{1}={2}\n", n, i, n * i);
 
-                
+            Console.WriteLine("Enter the value of n");
+            n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Even natural numbers:\n");
+            Console.ReadLine();
+
+
+            for (i = 1; i <= n; i++)
+
+            {
+
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine("Even natural numbers:\n");
+                    Console.ReadLine();
+                    Console.WriteLine(i);
+
+
+
+                }
+
+
+
 
 
             }
+
             Console.ReadLine();
         }
-
-
-        // palindrome
-
-           
     }
 }
