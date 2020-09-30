@@ -4,42 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Evennum
+namespace sumofdigits
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int i, n;
-
-            Console.WriteLine("Enter the value of n");
-            n = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Even natural numbers:\n");
-            Console.ReadLine();
-
-
-            for (i = 1; i <= n; i++)
-
+            int  sum=0, r;
+            Console.WriteLine("Enter the value of n:");
+           int  n =Convert.ToInt32(Console.ReadLine());
+            while (n > 0)
             {
-
-                if (i % 2 == 0)
-                {
-                    Console.WriteLine("Even natural numbers:\n");
-                    Console.ReadLine();
-                    Console.WriteLine(i);
-
-
-
-                }
-
-
-
-
-
+                r = n % 10;
+                sum = sum + r;
+                n = n / 10;
             }
-
+            Console.WriteLine($"The sum of the digits of given number is: {sum}");
             Console.ReadLine();
+
         }
     }
 }
