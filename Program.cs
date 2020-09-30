@@ -4,32 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace palindrome
+namespace Evennum
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a String ");
-            string n = Console.ReadLine();
-            char[] nArray = n.ToCharArray();
-            Array.Reverse(nArray);
-            string reverse = new string(nArray);
-            if (n.Equals(reverse))
+            int i, n;
+
+            Console.WriteLine("Enter the value of n");
+            n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Even natural numbers:\n");
+            Console.ReadLine();
+
+
+            for (i = 1; i <= n; i++)
 
             {
-                Console.WriteLine("Given String is a palindrome");
+
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine("Even natural numbers:\n");
+                    Console.ReadLine();
+                    Console.WriteLine(i);
+
+
+
+                }
+
+
+
+
+
             }
-            else
 
-            {
-                Console.WriteLine("Given string is not a palindrome");
-            }
-            Console.ReadKey();
-
-
-
+            Console.ReadLine();
         }
     }
 }
-
