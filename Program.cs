@@ -4,24 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sumofdigits
+namespace Amstrongnum
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int  sum=0, r;
-            Console.WriteLine("Enter the value of n:");
-           int  n =Convert.ToInt32(Console.ReadLine());
+            int n, r, sum = 0, temp;
+            Console.Write("Enter the Number= ");
+            n = int.Parse(Console.ReadLine());
+            temp = n;
             while (n > 0)
             {
                 r = n % 10;
-                sum = sum + r;
+                sum = sum + (r * r * r);
                 n = n / 10;
             }
-            Console.WriteLine($"The sum of the digits of given number is: {sum}");
+            if (temp == sum)
+                Console.WriteLine("Armstrong Number.");
+                  
+            else
+                Console.WriteLine("Not Armstrong Number.");
             Console.ReadLine();
-
         }
+     
     }
 }
+    
