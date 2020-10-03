@@ -3,31 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
-namespace Amstrongnum
+namespace FileWrite
 {
-    class Program
+
+
+     class Program
     {
-        static void Main(string[] args)
-        {
-            int n, r, sum = 0, temp;
-            Console.Write("Enter the Number= ");
-            n = int.Parse(Console.ReadLine());
-            temp = n;
-            while (n > 0)
+    class FW
+    {
+        
+
+            public void Myfile()
             {
-                r = n % 10;
-                sum = sum + (r * r * r);
-                n = n / 10;
+                FileStream f = new FileStream("C:\\Daily Assignments c#\\oops.txt", FileMode.OpenOrCreate);
+
+                StreamWriter sw = new StreamWriter(f);
+                StreamReader sr = new StreamReader(f);
+
+                Console.WriteLine("Enter the Text:");
+               Console.ReadKey();
+
+
+                // To read the input from the user 
+                  string s = Console.ReadLine();
+                string str = sr.ReadLine();
+               // To write a line in buffer 
+                 sw.WriteLine(s);
+                Console.WriteLine(str);
+Console.ReadLine();
+
+
+
+                // To write in output stream 
+
+
+
+                //To close the stream
+                 sw.Close();
+                sr.Close();
+                f.Close();
             }
-            if (temp == sum)
-                Console.WriteLine("Armstrong Number.");
-                  
-            else
-                Console.WriteLine("Not Armstrong Number.");
-            Console.ReadLine();
         }
-     
+    
+//Main Method
+static void Main(string[] args)
+{
+    FW w = new FW();
+
+    w.Myfile();
+
+
+    Console.ReadLine();
+}
     }
 }
-    
+
