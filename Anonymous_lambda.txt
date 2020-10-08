@@ -1,0 +1,143 @@
+//**************Working with Anonymous methods,Lambda expressions***********//
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Anonymous_assex
+{
+    public delegate int AddDelegate(int x, int y);
+    public delegate bool EvenDelegate(int n);
+    public delegate bool ReverseDelegate(string str);
+    public delegate void CubeDelegate(int a);
+    public delegate bool UpperDelegate(string str1);
+    public delegate string ConcatDelegate(string s1,string s2);
+    public delegate bool CompareDelegate(string str1, string str2);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //_____________________Anonymous________________________________
+         //   AddDelegate ad = delegate (int x, int y)
+         //  {
+         //      return x + y;
+
+         //  };
+         //   int val = ad.Invoke(10, 20);
+         //   Console.WriteLine(val);
+         //   Console.ReadLine();
+
+         //   EvenDelegate ed = delegate (int n )
+         //   {
+         //       if (n % 2 == 0)
+         //       {
+         //           return true;
+         //       }
+         //       else
+         //       {
+         //           return false;
+
+         //       }
+
+         //   };
+         //   bool b = ed.Invoke(21);
+         //   Console.WriteLine(b);
+         //   Console.ReadLine();
+         //   ReverseDelegate rd = delegate (string str)
+         //   {
+         //       return str.Equals(str.Reverse());
+         //   };
+         //rd.Invoke("priscilla");
+
+
+         //   CubeDelegate cd = delegate (int a)
+         //   {
+         //       Console.WriteLine(a * a * a);
+         //       Console.ReadLine();
+         //   };
+         //   cd.Invoke(20);
+
+         //   UpperDelegate ud = delegate (string str1)
+         //   {
+         //       return str.Equals(str.ToUpper());
+         //   };
+         //   bool b1 = ud.Invoke("sweety");
+         //   Console.WriteLine(b1);
+         //   Console.ReadLine();
+         // ConcatDelegate ct = delegate (string s1,string s2)
+
+         //   {
+         //       return s1 + s2;
+                
+         //   };
+         //  string m = ct.Invoke("priscilla","Katherine");
+         //   Console.WriteLine(m);
+         //   Console.ReadLine();
+
+            //  -------------------------------Lamda expressions--------------------------
+
+            AddDelegate ad = (x,  y) =>
+            {
+                return x + y;
+
+            };
+          
+            Console.WriteLine(ad(100,32));
+            Console.ReadLine();
+
+            EvenDelegate ed =  (n)=>
+            {
+                if (n % 2 == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+
+                }
+
+            };
+        
+            Console.WriteLine(ed(21));
+            Console.ReadLine();
+            CompareDelegate cm = (str1, str2)=>
+           {
+         
+               return str1 == str2;
+
+          };
+
+
+            Console.WriteLine(cm("madam","priscilla"));
+            Console.ReadLine();
+
+
+            CubeDelegate cd =  a=>
+            {
+                Console.WriteLine(a * a * a);
+                Console.ReadLine();
+            };
+            cd.Invoke(20);
+
+            UpperDelegate ud = str1=>
+            {
+                return str1.Equals(str1.ToUpper());
+            };
+            
+            Console.WriteLine(ud("SWEETY"));
+            Console.ReadLine();
+            ConcatDelegate ct = (s1,s2)=>
+
+            {
+                return s1 + s2;
+
+            };
+           
+            Console.WriteLine(ct("priscilla", "Katherine"));
+            Console.ReadLine();
+        }
+        
+    }
+}

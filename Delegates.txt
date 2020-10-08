@@ -1,0 +1,96 @@
+//********************Delegates****************
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Delegate_Examples
+{
+    public delegate int AddDelegate(int x, int y);
+    public delegate bool EvenDelegate(int n);
+    public delegate bool ReverseDelegate(string str);
+    public delegate void CubeDelegate(int a);
+    public delegate bool UpperDelegate(string str);
+    public delegate bool LengthDelegate(string s);
+    class Program
+
+    {
+        public static int Add(int x, int y)
+        {
+            return x + y;
+        }
+        public static bool Isupper(string str)
+        {
+            return str.Equals(str.ToUpper());
+
+        }
+        public static bool Reverse(string str)
+        {
+           return  str.Equals(str.Reverse());
+           
+        }
+        public static bool Lengthstr(string s)
+        {
+            if (s.Length <= 5)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public static bool IsEven(int n)
+        {
+            if (n % 2 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static void cube(int a)
+        {
+            Console.WriteLine( a * a * a);
+            Console.ReadLine();
+        }
+
+        static void Main(string[] args)
+        {
+            //_____________________ Working with delegates______________________________
+            //instantiation of delegates
+            AddDelegate ad = new AddDelegate(Add);
+
+
+                Console.WriteLine(ad(20, 20));
+            Console.ReadLine();
+
+            UpperDelegate ud = new UpperDelegate(Isupper);
+            Console.WriteLine(ud("SWEETY"));
+            Console.ReadLine();
+
+            ReverseDelegate rd = new ReverseDelegate(Reverse);
+            rd("Sweety");
+
+            LengthDelegate ln = new LengthDelegate(Lengthstr);
+        Console.WriteLine(ln("Priscilla"));
+            Console.ReadLine();
+
+            EvenDelegate ed = new EvenDelegate(IsEven);
+            Console.WriteLine(ed(24));
+            Console.ReadLine();
+
+
+            CubeDelegate cd = new CubeDelegate(cube);
+                     cd(10);
+           
+
+
+                
+        }
+    }
+}

@@ -1,0 +1,152 @@
+//*****************Examples on anonymous method*************//
+//Example1:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Anonomous_Ast
+{
+    public delegate void Multnumdelegate(int a, int b,int c);
+    class Program
+    {
+        //using named methods
+        //public static void Multnum(int a,int b,int c)
+        //{
+        //    Console.WriteLine("The product is :"+ a * b * c);
+        //    Console.ReadLine();
+        //}
+        
+        static void Main(string[] args)
+        {
+            //Multnumdelegate md = new Multnumdelegate(Multnum);
+            //{
+            //    md.Invoke(25, 5, 5);
+            //}
+
+            //using Anonomous method
+            Multnumdelegate md = delegate (int a, int b, int c)
+            {
+                Console.WriteLine("The product is:" + a * b * c);
+            };
+            md.Invoke(5 , 5 ,5);
+            Console.ReadLine();
+
+            }
+        }
+    }
+//Example2:
+//using NamedMethod
+        //public static void ConcatString(string str1, string str2 )
+        //{
+        //    Console.WriteLine("The result is: " + str1 + str2);
+        //    Console.ReadLine();
+        //}
+        static void Main(string[] args)
+        {
+            //ConcatStrdelegate cs = new ConcatStrdelegate(ConcatString);
+            //{
+            //    cs.Invoke("Priscilla", "Katherine");
+            //}
+
+            //using Annomous method
+            ConcatStrdelegate cs = delegate (string str1, string str2)
+            {
+                Console.WriteLine("The result is: " + str1 + str2);
+            };
+            cs.Invoke("Priscilla", "Katherine");
+            Console.ReadLine();
+        }
+    }
+}
+//Example:3
+ ////named method
+        //public static void Fact(int num)
+        //{
+        //    int f = 1, i;
+        //    for (i = 1; i <= num; i++)
+        //    {
+        //        f = f * i;
+        //    }
+        //    Console.WriteLine("factorial is:" + f);
+        //    Console.ReadLine();
+        //}
+        static void Main(string[] args)
+        {
+            //Facdelegate fd = new Facdelegate(Fact);
+            //{
+
+
+            //    fd.Invoke(6);
+
+            //using anonymous
+
+
+            Facdelegate fd = delegate (int num)
+            {
+                int f = 1, i;
+                for (i = 1; i <= num; i++)
+                {
+                    f = f * i;
+                }
+                Console.WriteLine("factorial is:" +f);
+            };
+              fd.Invoke(6);
+
+            Console.ReadLine();
+        }
+    }
+
+    }
+
+//using NamedMethod
+        //public static void ConcatString(string str1, string str2 )
+        //{
+        //    Console.WriteLine("The result is: " + str1 + str2);
+        //    Console.ReadLine();
+        //}
+        static void Main(string[] args)
+        {
+            //ConcatStrdelegate cs = new ConcatStrdelegate(ConcatString);
+            //{
+            //    cs.Invoke("Priscilla", "Katherine");
+            //}
+
+            //using Annomous method
+            ConcatStrdelegate cs = delegate (string str1, string str2)
+            {
+                Console.WriteLine("The result is: " + str1 + str2);
+            };
+            cs.Invoke("Priscilla", "Katherine");
+            Console.ReadLine();
+        }
+    }
+}
+//Example4:
+//named method
+        //public  static void  Strlen(string str)
+        //{
+        //    Console.WriteLine("The Length of the string is:" +str.Length);
+        //    Console.ReadLine();
+        //}
+        static void Main(string[] args)
+        {
+            //StringlenDelegate sl = new StringlenDelegate(Strlen);
+            //{
+            //    sl.Invoke("Priscilla");
+            //}
+
+            //Anonymous method
+            StringlenDelegate sl = delegate(string str)
+            {
+                Console.WriteLine("The Length of the string is:" + str.Length);
+                Console.ReadLine();
+            };
+
+                sl.Invoke("Priscilla");
+            }
+
+        }
+    }
+

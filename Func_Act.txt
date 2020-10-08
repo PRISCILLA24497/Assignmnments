@@ -1,0 +1,66 @@
+//*************Wroking with Func,Action Delegates***************//
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fun_Act
+{
+  
+    class Program
+    {
+       // __________________________Func,Action Delegate___________________-
+        static void Main(string[] args)
+        {
+            //Func Delegate
+            Func<int, int, int> x = (a, b) =>
+             {
+                 return a - b;
+             };
+            int val = x.Invoke(30, 20);
+            Console.WriteLine(val);
+            Console.ReadLine();
+
+            Func<int, bool> x1 = a =>
+            {
+
+                if (a % 2 == 0)
+                {
+                    return true;
+                }
+                else
+
+                    return false;
+
+
+            };
+            bool val1 = x1.Invoke(10);
+            Console.WriteLine(val1);
+            Console.ReadLine();
+            //Action
+            Action<string> x2 = (str) =>
+            {
+
+                Console.WriteLine(str);
+                Console.ReadLine();
+
+            };
+            x2.Invoke("Priscilla");
+            //Action Delegate
+            Action<int> x3 = a =>
+            {
+
+                Console.WriteLine(a * a * a);
+                Console.ReadLine();
+
+
+            };
+           
+             x3.Invoke(29);
+
+        
+
+        }
+    }
+}
