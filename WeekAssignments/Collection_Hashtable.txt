@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace Collection
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add(1, "HR");
+            ht.Add(2, "IT");
+            ht.Add(3, "CS");
+            int x = ht.GetHashCode();
+            Console.WriteLine(x);
+            foreach (object keys in ht.Keys)
+            {
+                int dept_id = (int)keys;
+                string Name = (string)ht[dept_id];
+
+                ArrayList al = new ArrayList();
+                al.Add(new employee { ID = 1, Name = "priya" });
+                al.Add(new employee { ID = 2, Name = "riya" });
+
+                Hashtable h1 = new Hashtable();
+                h1.Add("Employee", al);
+                foreach (string dept in h1.Keys)
+                {
+                    ArrayList a = new (ArrayList)h1[dept];
+                   for(int i=0,i<args.Count,i++)
+                    {
+                        employee e = (employee)obj;
+                        Console.WriteLine(e.ID);
+                        Console.WriteLine(e.Name);
+                    }
+                }
+
+                Console.ReadLine();
+            }
+        }
+        class employee
+        {
+            public int ID { get; set; }
+            public string Name { get; set; }
+
+        }
+    }
+
+}
