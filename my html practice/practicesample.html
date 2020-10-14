@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> java script example</title>
+    <style type=text/css>
+        body {
+          background-color:lightsalmon;
+        }
+       </style>
+</head>
+<body id="body1">
+    <script type="text/javascript">
+        function f1() {
+            window.alert("Hi you have clicked me");
+        }
+        function f2()
+        {
+            document.getElementById('hid').innerHTML = "Hi my name is priscilla";
+        }
+        function f3() {
+            document.getElementById('img1').width = '100';
+
+
+        }
+        function changebackground() {
+            document.getElementById('body1').style.backgroundColor = 'red';
+        }
+        function hide() {
+            document.getElementById('hid2').style.display = 'none';
+        }
+    </script>
+    <h1 id="hid">my name is sachin</h1>
+    <h2 id="hid2">Welcome to js</h2>
+    <img src="Google.png" width="500" height="500" id="img1">
+    <button onclick="f1()">click me</button>
+    <button onclick="f2()">Click me to change</button>
+    <button onclick="f3()">click me to change image size</button>
+    <button onclick="changebackground()">click me to change background</button>
+    <button onclick="hide()">click me </button>
+
+</body>
+</html>

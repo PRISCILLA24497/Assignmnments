@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function getName() {
+
+            var name = document.calculate.n1.value;
+            alert("your name is:" + name);
+        }
+        var a = 10;
+        var name = "sachin";
+        var salary = 20000.67;
+        document.write(a + " " + typeof (a));
+        document.write(name + " " + typeof (name));
+        document.write(salary + " " + typeof (salary));
+
+       
+    </script>
+    <form action="" name="calculate" onsubmit="getName()">
+        <input type="text" name="n1" value="priscilla"><br />
+        <input type="submit" value="submit" />
+     </form>
+
+</body>
+</html>

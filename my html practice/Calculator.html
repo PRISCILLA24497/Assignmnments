@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #h1 {
+            background-color:sandybrown;
+            align-content: center;
+            font-family: Calibri, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+
+       
+
+        #h2 {
+           
+            text-align: center;
+            color: black;
+            text-decoration-style:wavy;
+
+        }
+
+        input[type=text] {
+            width: 10%;
+            margin: 8px 0;
+            padding: 15px 10px;
+            
+            border: 2px thin pink;
+           
+            
+            
+        }
+
+        input[type=button] {
+            background-color:lightcoral;
+            color:black;
+            border-radius: 12px;
+            border-color:lightcoral;
+        
+            padding: 10px 24px;
+        
+        }
+        label
+        {
+            text-size-adjust:inherit;
+
+        }
+    </style>
+</head>
+<body id="h1">
+    <script type="text/javascript">
+
+        function add() {
+            var x = parseFloat(document.getElementById('n1').value);
+            var y = parseFloat(document.getElementById('n2').value);
+            document.getElementById('result').value = x + y;
+        }
+        function subtract() {
+            var x = parseFloat(document.getElementById('n1').value);
+            var y = parseFloat(document.getElementById('n2').value);
+            document.getElementById('result').value = x - y;
+        }
+        function multiply() {
+            var x = parseFloat(document.getElementById('n1').value);
+            var y = parseFloat(document.getElementById('n2').value);
+            document.getElementById('result').value = x * y;
+        }
+        function div() {
+            var x = parseFloat(document.getElementById('n1').value);
+            var y = parseFloat(document.getElementById('n2').value);
+            document.getElementById('result').value = x/y;
+        }
+
+    </script>
+    <h1 id="h2">ARTHIMETIC CALCULATOR</h1>
+    <form action="" name="calculator">
+
+        <label>value1:</label><input type="text" name="num1" value="" id="n1" /><br />
+
+    <label>value2:</label> <input type="text" name="num2" value="" id="n2" />
+        <br />
+
+        <label>Result:</label><input type="text" value="" id="result" /><br />
+        <input type="button" value="Addition" onclick="add()" />
+        <input type="button" value="Substraction" onclick="subtract()" />
+        <input type="button" value="Multiplication" onclick="multiply()" />
+        <input type="button" value="Division" onclick="div()" /><br />
+
+
+    </form>
+
+
+</body>
+</html>
