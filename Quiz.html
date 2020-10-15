@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Quiz</title>
+    <style type="text/css">
+        body {
+            background-color: lightpink;
+            font-family: 'Lato',sans-sarif;
+        }
+        #hid2 {
+        
+            text-align: center;
+            color: darkblue;
+        }
+
+        #button {
+            background-color:brown;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+
+        #after_submit {
+            visibility: hidden;
+        }
+        div {
+            border: 5px outset;
+            border-color: aliceblue;
+            background-color: aliceblue;
+            box-sizing:border-box;
+        }
+       
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function check() {
+            var question1 = document.quiz.question1.value;
+            var question2 = document.quiz.question2.value;
+            var question3 = document.quiz.question3.value;
+            var question4 = document.quiz.question4.value;
+            var question5 = document.quiz.question5.value;
+            var correct = 0;
+
+            if (question1 == "c") {
+                correct = correct + 1;
+            }
+
+            if (question2 == "d") {
+                correct = correct + 1;
+            }
+            if (question3 == "a") {
+                correct = correct + 1;
+            }
+            if (question4 == "b") {
+                correct = correct + 1;
+            }
+            if (question5 == "b") {
+                correct = correct + 1;
+            }
+
+            var messages = ["Great Job", "Better", "you need to improve"];
+            var score;
+            if (correct < 1) {
+                score = 2;
+            }
+            if (correct > 0 && correct < 5) {
+                score = 1;
+            }
+            if (correct > 4) {
+                score = 0;
+            }
+
+
+            document.getElementById("after_submit").style.visibility = "visible";
+            document.getElementById("message").innerHTML = messages[score];
+            document.getElementById("number_correct").innerHTML = "you got:" + correct + " correct.";
+        }
+
+
+
+    </script>
+
+
+    <h1 id="hid2"> JavaScript Quiz</h1>
+    <form id="quiz" name="quiz">
+
+        <div>
+            <p>1)What is the HTML tag under which one can write the JavaScript code?</p>
+            a): <input type="radio" id="nc" name="question1" value="a">javascript tag<br>
+            b): <input type="radio" id="nc" name="question1" value="b">scripted tag<br>
+            c): <input type="radio" id="nc" name="question1" value="c">script tag<br>
+            d): <input type="radio" id="nc" name="question1" value="d">js tag<br>
+
+
+            <p>2)Which of the following is the correct syntax to display 'Hello World' in an alert box using JavaScript? </p>
+            a): <input type="radio" id="nc" name="question2" value="a">alertbox('Hello World');<br>
+            b): <input type="radio" id="nc" name="question2" value="b">msgbox('Hello World');<br>
+            c): <input type="radio" id="nc" name="question2" value="c">msg('Hello World');<br>
+            d): <input type="radio" id="nc" name="question2" value="d">alert('Hello World');<br>
+
+
+            <p>3)MVC stands for</p>
+            a):<input type="radio" id="nc" name="question3" value="a">Model view controller<br>
+            b):<input type="radio" id="nc" name="question3" value="b">Make view controller<br>
+
+            <p>4)Which of the following function of String object creates a string to be displayed as bold as if it were in a 'b' tag?</p>
+            a):<input type="radio" id="nc" name="question4" value="a">anchor tag<br>
+            b):<input type="radio" id="nc" name="question4" value="b">bold tag<br>
+            c):<input type="radio" id="nc" name="question4" value="c">big tag<br>
+            d):<input type="radio" id="nc" name="question4" value="d">break tag<br>
+
+            <p>5)Java Script is not a Prgrogamming language</p>
+            a): <input type="radio" id="nc" name="question5" value="a">True<br>
+            b): <input type="radio" id="nc" name="question5" value="b">False<br>
+        </div>
+
+
+
+        <input id="button" type="button" value="Submit" onclick="check();" />
+
+
+    </form>
+    <div id="after_submit">
+        <p id="message"></p>
+        <p id="number_correct"></p>
+    </div>
+
+
+
+
+
+
+</body>
+</html>
