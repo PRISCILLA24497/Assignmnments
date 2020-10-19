@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+
+
+
+    <span>  <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="flower.jpg" alt="flower" width="32" height="32"></span>
+
+
+    <span>
+        <img onmousedown="bigImg(this)" onmouseup="normalImg(this)" border="0" src="flower1.jpg" alt="flower1" width="32" height="32">
+    </span>
+
+
+    <script>
+        function bigImg(x) {
+            x.style.height = "64px";
+            x.style.width = "64px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "32px";
+            x.style.width = "32px";
+        }
+    </script>
+
+
+
+</body>
+</html>
+
