@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".rose").click(function () {
+                $("#x").fadeIn();
+                $("#y").fadeIn("slow");
+                $("#z").fadeIn(5000);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".sweet").click(function () {
+                $("#a").fadeOut();
+                $("#b").fadeOut("fast");
+                $("#c").fadeOut(5000);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".prisci").click(function () {
+                $(".carrot").fadeTo("slow", 0.7);
+                $(".mango").fadeTo("fast", 0.10);
+
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#1").click(function () {
+                $("#p").fadeToggle("slow");
+                $("#r").fadeToggle(5000);
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Fade Effect In</h1>
+        <p id="p"><b>Prisclla</b></p>
+        <p id="r"><i>Katherine</i></p>
+        <button id="1">FadeToggle</button>
+
+        <h1 id="a" style="background-color:yellow;font-size:10px;font-style:italic">Jquery</h1>
+        <h2 id="b" style="background-color:sandybrown;font-size:20px;font-style:unset">JavaScript</h2>
+        <h3 id="c" style="background-color:coral;font-size:30px;font-style:oblique">HTML</h3>
+        <button class="sweet">FadeOut</button><br /><br />
+
+        <p id="x" style="width:500px;height:50px;display:none;background-color:lightpink;"> Hello World!!</p><br>
+        <p id="y" style="width:500px;height:50px;display:none;background-color:lavender;"> Welcome to JQuery</p><br>
+        <p id="z" style="width:500px;height:50px;display:none;background-color:blueviolet;">This is priscilla from DXC</p><br><br>
+        <button class="rose">FadeIn</button><br /><br />
+        <div class="carrot" style="background-color:mediumpurple;width:30px;height:30px"></div><br>
+        <div class="mango" style="background-color:cyan;width:30px;height:30px"></div><br><br>
+        <button class="prisci">FadeTo</button>
+
+    </center>
+
+</body>
+</html>
