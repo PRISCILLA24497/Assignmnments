@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="result"style="width:200px; height:200px; background-color:pink"></div>
+
+    <script>
+// Defining event listener function
+function displayWindowSize() {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var size = "Width: " + w + ", " + "Height: " + h;
+    document.getElementById("result").innerHTML = size;
+}
+
+        // Attaching the event listener function to window's resize event
+        window.addEventListener("resize", displayWindowSize);
+    </script>
+
+</body>
+</html>

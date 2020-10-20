@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+</head>
+<body>
+    <script>
+        function hov() {
+            var e = document.getElementById('hover');
+            e.style.width = "50px";
+            e.style.height = "50px";
+        }
+        function hov1() {
+            var x = document.getElementById('hover');
+            x.style.width = "500px";
+            x.style.height = "500px";
+        }
+    </script>
+    <div id="hover" onmouseover="hov()" onmouseout="hov1()"
+         style="background-color:hotpink;height:200px;width:200px;">
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1 id="id01">Welcome to dxc</h1>
+    <p id="id02"></p>
+    <p id="101">Hello World!!!!!!!!</p>
+    <p id="102"></p>
+
+    <div>
+        <p>The DOM is very useful!</p>
+        <p>This example demonstrates the <b>document.documentElement</b> property.</p>
+    </div>
+
+    <script>
+
+
+        alert(document.documentElement.innerHTML);
+        document.getElementById("101").innerHTML = document.getElementById("102").nodeType;
+
+   
+
+    document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;
+    document.getElementById("102").innerHTML = document.getElementById("101").firstChild.nodeValue;
+    document.getElementById("id02").innerHTML = document.getElementById("id01").childNodes[0].nodeValue;
+    document.getElementById("id02").innerHTML = document.getElementById("id01").nodeName;
+
+    </script>
+
+
+</body>
+</html>

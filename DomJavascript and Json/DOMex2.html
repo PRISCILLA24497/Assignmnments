@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="x">
+        <h1 id="title">Hello!!</h1>
+        <p id="sweet"><span>Welcome to DXC</span></p>
+        <p id="red">This is priscilla</p>
+    </div>
+
+    <script>
+        var x = document.getElementById("x");
+        alert("Element is: " + x.firstElementChild.nodeName); // Outputs: H1
+        x.firstElementChild.style.color = "violet";
+        
+        var sweet = document.getElementById("sweet");
+        alert("Element is :" + sweet.firstElementChild.nodeName); // Outputs: SPAN
+        sweet.firstElementChild.style.color = "blue";
+
+        var red = document.getElementById("red");
+       
+        if (red.hasChildNodes()) {
+            var nodes = red.childNodes;
+
+            // Loop through node list and display node name
+            for (var i = 0; i < nodes.length; i++) {
+                console.log(nodes[i].nodeName);
+            }
+        }
+
+    </script>
+</body>
+</html>

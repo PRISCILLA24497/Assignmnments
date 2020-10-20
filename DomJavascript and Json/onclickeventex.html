@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <img id="image" src="flower1.jpg" onclick="moveright()" ondblclick="moveback()" >
+    <script>
+        function moveright() {
+            document.getElementById("image").style.position = "absolute";
+            document.getElementById("image").style.right = "0";
+        }
+        function moveback() {
+            document.getElementById("image").style.position = "absolute";
+            document.getElementById("image").style.left = "0";
+        }
+
+    </script>
+
+</body>
+</html>
