@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+             
+                alert("Text:" + $("#test").text());
+            });
+            $("#btn2").click(function () {
+
+                alert("Html:" + $("#test").html());
+            
+                  
+            });
+           $("#btn3").click(function () {
+
+                alert("Value:" + $("#test1").val());
+            
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+    
+
+    <p id="test">Hello!! this is priscilla
+<b>Welcome to dxc</b></p>
+<p>Name:<input type="text" id="test1" value="Tom and Jerry"></p>
+
+<button id="btn1">show text</button>
+<button id="btn2">Show HTML</button>
+<button id="btn3">show Value</button>
+</body>
+</html>
+
+

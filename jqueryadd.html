@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").append(" <b>DXC</b>.");
+            });
+            $("#btn2").click(function () {
+                $("ol").prepend("<li><i>Fruits</i></li>");
+            });
+            $("#btn3").click(function () {
+                $("#y").after("library");
+            });
+            $("#btn4").click(function () {
+                $("#x").before("<i>Jquery</i>");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <p>Welcome To</p>
+    <p>This is Priscilla from </p>
+    <ol>
+        <li>orange</li>
+        <li>mango</li>
+        <li>apple</li>
+    </ol>
+    <p id="y"> JQuery is a java script</p><br />
+    <p id="x"> is a scripting language</p>
+    
+    <button id="btn1">Append</button>
+    <button id="btn2">Prepend</button>
+    <button id="btn3">After</button>
+    <button id="btn4">Before</button>
+
+
+</body>
+</html>
