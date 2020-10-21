@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+$(document).ready(function(){
+  $("button")  .click(function(){
+      var x = $("p");
+      x.animate({ left: '100px' }, "fast");
+      x.animate({ fontSize: '2em'}, "slow");
+  });
+});
+    </script>
+</head>
+<body>
+    <p style=" height:100px; width:100px;position:relative ;color:blue; background-image:url(rose.jpg)" > Hello World!!</p><br><br>
+
+
+   
+
+
+    <button style="background-color:brown;width:auto;height:auto" > Animation</button>
+
+</body>
+</html>
