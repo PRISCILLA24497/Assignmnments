@@ -1,0 +1,1 @@
+﻿insert into Student values(5,'Sandhya','sanju@gmail.com','7683548955','CS')
