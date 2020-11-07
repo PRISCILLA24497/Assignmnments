@@ -1,0 +1,54 @@
+<h5>{{title}}</h5>
+<h1>Hello!</h1>
+<h3>Welcome to Angular</h3>
+
+<h2>Calculation is : {{ n1 + n2}}</h2>  
+<ul>
+    <li><b>Fruits</b></li>
+    <li> Apple </li>
+    <li>Bannana</li>
+    <li>PineApple</li>
+    <li>CusturdApple</li>
+    <li>Kiwi</li>
+  </ul>
+  <div class='panel panel-primary'>  
+    <div class='panel-heading'> 
+    {{subtitle}}    
+    </div>   
+    <div class='panel-body'>  
+        <div class='table-responsive'>  
+            <table class='table' border="1px">  
+                <thead>  
+                    <tr>  
+                        <th>Name</th>  
+                        <th>Branch</th>  
+                        <th>Marks</th>  
+               
+                    </tr>  
+                </thead>  
+                <tbody>  
+                    <tr *ngFor="let s of student;">  
+                        <td>{{s.Name}}</td>  
+                        <td>{{s.Branch}}</td>  
+                        <td>{{s.Marks}}</td>  
+           
+                    </tr>  
+                </tbody>  
+            </table>  
+        </div>  
+    </div>  
+</div>  
+
+<br><br>
+
+<select [(ngModel)]="selectedValue">  
+  <option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>  
+</select> 
+<div class='row' [ngSwitch]="selectedValue">  
+  <div *ngSwitchCase="'priscilla'"> Hello!!priscilla Congragulations</div>  
+  <div *ngSwitchCase="'lily'">Hello!!lily Congragulations</div>  
+  <div *ngSwitchDefault>Default Option</div>  
+</div>  
+<app-sweety></app-sweety>
+<app-sample></app-sample>  
+<router-outlet></router-outlet>
