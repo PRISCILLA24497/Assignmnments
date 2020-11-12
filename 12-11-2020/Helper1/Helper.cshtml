@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Helper</title>
+</head>
+<body>
+	<div>
+		<div><label>Username:</label>@Html.TextBox("textbox1") </div><br />
+		<div>@Html.TextBox("textbox2") </div><br />
+		<div>@Html.Password("Password") </div><br />
+		<div><label>Accept terms and conditions</label>@Html.CheckBox("checkbox1") </div><br />
+		<div><label>male</label>@Html.RadioButton("gender", "male", true, new { id = "male" })</div>
+		<div><label>female</label>@Html.RadioButton("gender", "female", true, new { id = "female" })</div>
+		@using (Html.BeginForm("my form"))
+		{
+			<label>Fullname</label>
+		}
+		<div>@Html.Hidden("hidden1")</div>
+		<div>@Html.TextArea("Profile", new { cols = 30, rows = 10 })</div>
+		<br />
+		@Html.Hidden("EmployeeId", "")<br />
+		@Html.ListBox("Skills",new List<SelectListItem> {
+		new SelectListItem { Text="ASP",Value="1"},
+		new SelectListItem { Text="C#",Value="2"},
+		new SelectListItem { Text="PHP",Value="3"},
+		new SelectListItem { Text="JQuery",Value="4"},
+		new SelectListItem { Text="JavaScript",Value="5"}
+		},new { @class="form-control"})
+		<br /><br />
+		@Html.DropDownList("Gender", new List<SelectListItem> {
+		new SelectListItem {Text="Select City",Value="-1" },
+		new SelectListItem {Text="Chennai",Value="1" },
+		new SelectListItem {Text="Hyderabad", Value="2" },
+		new SelectListItem {Text="Visakhapatnam", Value="3" },
+		new SelectListItem {Text="Delhi", Value="4" }
+
+
+		}, new { @class = "custom-select" }))
+		<br /><br /><br /><br /><br />
+		@Html.Label("firstName")<br />
+		<button>Submit</button>
+	</div>
+</body>
+</html>
