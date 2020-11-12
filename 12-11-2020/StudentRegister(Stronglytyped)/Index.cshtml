@@ -1,0 +1,104 @@
+﻿@using Student_Register.Models
+@model Student
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="boostrap.css" >
+
+	<title>Index</title>
+</head>
+<body>
+		@using (Html.BeginForm("Student Registration"))
+		{
+			
+	<table cellpadding="3" style="background-color:mediumspringgreen">
+		<tr><td><h2 style="text-align:center"><b>Student Registration</b></h2></td></tr>
+
+
+		<tr>
+			<td>
+				<label>
+					Username: @Html.TextBoxFor(x => x.Name)
+				</label>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>
+					Password:
+					@Html.PasswordFor(x => x.Password)
+				</label>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>
+					Gender:
+				</label>
+				<label>
+					@Html.RadioButtonFor(model => model.Gender, true, new { id = "male-true" })
+					@Html.Label("male-true", "Male")
+				</label>
+				<label>
+					@Html.RadioButtonFor(model => model.Gender, false, new { id = "female-true" })
+					@Html.Label("female-true", "Female")
+				</label>
+			</td>
+		</tr>
+
+
+		<tr><td><label>Address: @Html.TextAreaFor(x => x.Address)</label></td></tr>
+		<tr>
+			<td>
+				<Label>Hobbies:</Label></td></tr><tr>
+			<td>@Html.CheckBox("chbox1")<label>Reading Books</label></td></tr><tr>
+			<td>@Html.CheckBox("chbox2")<label>Listening Music</label></td></tr><tr>
+			<td>@Html.CheckBox("chbox3") <label>Dancing</label></td></tr><tr>
+			<td>@Html.CheckBox("chbox4")<label>Singing</label></td>
+		</tr>
+
+
+		<tr>
+			<td>
+				<label>
+					Courses: @Html.DropDownListFor(x => x.Courses, new SelectList(Enum.GetValues(typeof(courses))), "Select Course", new { @class = "form-control" })
+
+				</label>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<label>
+					Skills: @Html.DropDownListFor(x => x.Skills, new SelectList(Enum.GetValues(typeof(skills))), "Select skills", new { @class = "form-control" })
+				</label>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>
+				<input type="submit" value="Submit" style="background-color:burlywood" />
+			</td>
+		</tr>
+
+
+	</table>
+		}
+
+
+
+
+		</>
+</body>
+</html>

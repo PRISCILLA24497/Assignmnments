@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Helper</title>
+</head>
+<body>
+	<div>
+	<div>
+		@Html.ActionLink("click here", "On Click", "example")
+	</div>
+	<div><label> Password: @Html.TextBox("textbox1")</label></div>
+	<div><label> Password: @Html.Password("password1")</label></div>
+	<div><label> Accept terms anf cond:  @Html.CheckBox("checkbox1")</label></div>
+
+	Male @Html.RadioButton("Gender", "male")
+	Female @Html.RadioButton("Gender", "female")</br>
+	@Html.DropDownList("Courses", new List<SelectListItem>
+{
+	  new SelectListItem { Text = "C", Value = "1", Selected=true},
+	  new SelectListItem { Text = "C++", Value = "2"},
+	  new SelectListItem { Text = "Dot net", Value = "3"}
+}, "Select Courses")
+
+
+	<input type="submit" value="submit" class="btn btn-primary" />
+	</div>
+</body>
+</html>

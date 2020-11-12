@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+	<h1 style="background-color:aquamarine" text-algin="center">Welcome To Registration page!!</h1>
+	<div>
+		<div><label>Usename:          @Html.TextBox("textbox3")</label></div><br />
+		<div><label> Password:        @Html.TextBox("textbox1")</label></div><br/>
+		<div><label>Confirm Password: @Html.Password("password1")</label></div><br/>
+		<div><label style="width:100px">Address:          @Html.TextArea("textarea1")</label></div><br/>
+		<div><label> Accept terms anf cond:  @Html.CheckBox("checkbox1")</label></div>
+
+		Male @Html.RadioButton("Gender", "male")
+		Female @Html.RadioButton("Gender", "female")<br/><br/>
+		@Html.DropDownList("Courses", new List<SelectListItem>
+	{
+		  new SelectListItem { Text = "C", Value = "1", Selected=true},
+		  new SelectListItem { Text = "C++", Value = "2"},
+		  new SelectListItem { Text = "Dot net", Value = "3"}
+	}, "Select Courses")<br/>
+	</div>
+
+	<input type="submit" value="Register" class="btn btn-primary" />
+</body>
+</html>
