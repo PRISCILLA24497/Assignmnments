@@ -1,0 +1,66 @@
+﻿@model MVCCRUDoperations.Context.student
+@{
+    ViewBag.Title = "Student";
+}
+<style>
+	.error{
+		color:red;
+	}
+</style>
+@using (Html.BeginForm("AddStudent", "Student", FormMethod.Post))
+{
+<div class="container">
+	<div class="form-group">
+		@Html.HiddenFor(x => x.sid)
+
+		<label>Name</label>
+		@Html.ValidationMessageFor(x => x.sname,"",new { @class="error"})
+
+		@Html.TextBoxFor(x => x.sname, new { @class = " form-ccontrol" })
+
+	</div>
+
+
+		<div class="form-group">
+
+			<label>Age</label>
+			@Html.TextBoxFor(x => x.age, new { @class = " form-ccontrol" })
+		</div>
+		<div class="form-group">
+
+			<label>Course</label>
+			@Html.ValidationMessageFor(x => x.course, "", new { @class = "error" })
+
+			@Html.TextBoxFor(x => x.course, new { @class = " form-ccontrol" })
+
+		</div>
+		<div class="form-group">
+
+			<label>City</label>
+			@Html.TextBoxFor(x => x.city, new { @class = " form-ccontrol" })
+		</div>
+		<div class="form-group">
+
+			<label>CourseId</label>
+			@Html.TextBoxFor(x => x.cid, new { @class = " form-ccontrol" })
+		</div>
+		<div class="form-group">
+
+			<label>StudentId</label>
+			
+
+			@Html.TextBoxFor(x => x.sid, new { @class = " form-ccontrol" })
+		</div>
+		
+		<div class="form-group">
+			<button type="submit" class=" btn btn-primary">Submit</button>
+			<button type="reset" class=" btn btn-danger">Cancel</button>
+
+			</div>
+	
+
+</div>
+}
+
+<h2>Student</h2>
+

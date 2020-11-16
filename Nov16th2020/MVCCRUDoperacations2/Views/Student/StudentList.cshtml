@@ -1,0 +1,37 @@
+﻿@model List<MVCCRUDoperations.Context.student>
+@{
+    ViewBag.Title = "StudentList";
+}
+
+<h2>StudentList</h2>
+
+<table class="table table-hover">
+	<tr>
+		<th>Name</th>
+		<th>Age</th>
+		<th>Course</th>
+		<th>City</th>
+
+		<th>Cid</th>
+		<th>Sid</th>
+		<th>Action</th>
+	</tr>
+		@foreach(var item in Model)
+		{
+	<tr>
+		<td>@item.sname</td>
+		<td>@item.age</td>
+		<td>@item.course</td>
+		<td>@item.city</td>
+
+		<td>@item.cid</td>
+		<td>@item.sid</td>
+		<td>
+			<a href="@Url.Action("Student",new { item.sid, item.age, item.sname, item.course, item.city, item.cid })" class="btn btn-success">Edit</a>
+			<a href="@Url.Action("Delete",new { item.sid })" class="btn btn-danger">Delete</a>
+		</td>
+	</tr>
+		}
+	
+
+</table>
