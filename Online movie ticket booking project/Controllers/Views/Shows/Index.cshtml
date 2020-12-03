@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Admin.Context.Show>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Shows</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Add_Show")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowStartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowEndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie.Movie_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Screen.ScreenName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat.Ticket)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Theatre.Theatre_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowStartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowEndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movie.Movie_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Screen.ScreenName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seat.Ticket)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Theatre.Theatre_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Show_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Show_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Show_ID })
+        </td>
+    </tr>
+}
+
+</table>

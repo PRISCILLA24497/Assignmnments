@@ -1,21 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title -Online Movie Ticket Booking</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title -Online Movie Ticket Booking</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
 	<div>
-		<h1 class="text-center" style="color:blue" >Online Movie Ticket Booking</h1>
+		<h1 class="text-center">Online Movie Ticket Booking</h1>
 	</div>
 </body>
 <body>
 	<style>
 		body {
-			background-color:bisque;
+			background-color: bisque;
 		}
 	</style>
 	@*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -46,31 +46,41 @@
 			<div>
 				<ul class="nav navbar-nav">
 					@*<li class="active"><a href="#">Home</a></li>
-		@*<button class="btn btn-default"><a href="#">Home</a></button>*@
+						@*<button class="btn btn-default"><a href="#">Home</a></button>*@
 					@*class="nav navbar-nav">*@
 					@*<li>@Html.ActionLink("Home", "Index", "Home")</li>
-					<li>@Html.ActionLink("About", "About", "Home")</li>
-					<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-					@*<li class="active"><a href="https://th.bing.com/th/id/OIP.akcnmGnwgeRj__SwsejJ_wHaFj?pid=Api&rs=1.jpg">Home</a></li>*@
+						<li>@Html.ActionLink("About", "About", "Home")</li>
+						<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+					<li class="active"><a href="#">Home</a></li>
 					<li><a href="~/Home/About">About</a></li>
 					<li><a href="~/Home/Contact">Contact</a></li>
-				    <li><a href="~/Admin_Login/Create">Admin Login</a></li>
-					<li><a href="~/Menu/Menu">Menu</a></li>
-					@*<li><a href="~/>Menu</a></li>*@
-					@*<li>@Html.ActionLink("Menu","Menu","MovieLists")</li>*@
-					</ul>
-				@*<li>@Html.ActionLink("Login", "Login", "Home")</li>*@
+					@*<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							Login
+
+
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="~/Admin_Login/Create">Admin</a></li>
+							<li><a href="#">User</a></li>
+
+						</ul>
+					</li>*@
+					@*<li>@Html.ActionLink("Login", "Login", "Home")</li>*@
+
+				</ul>
 			</div>
 			@*<div class="form-group">
-				<input type="text" class="form-control" placeholder="Search Movie Shows, Plays, Sports and Events ">
-			</div>*@
+					<input type="text" class="form-control" placeholder="Search Movie Shows, Plays, Sports and Events ">
+				</div>*@
 			<ul class="nav navbar-nav navbar-right">
 				<a href="~/AdminTables/Create" class="btn btn-primary navbar-btn">Register</a>
 			</ul>
 
 
 			</div>
-</nav>
+	</nav>
 
 
 	<div class="container body-content">
@@ -82,13 +92,17 @@
 	</div>
 
 	@*<div class="navbar-collapse collapse">
-		<ul class="nav navbar-nav">
-			<li>@Html.ActionLink("Home", "Index", "Home")</li>
-			<li>@Html.ActionLink("About", "About", "Home")</li>
-			<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-			<li>@Html.ActionLink("AdminList", "AdminList", "Admin")</li>
-		</ul>
-	</div>*@
+			<ul class="nav navbar-nav">
+				<li>@Html.ActionLink("Home", "Index", "Home")</li>
+				<li>@Html.ActionLink("About", "About", "Home")</li>
+				<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+				<li>@Html.ActionLink("AdminList", "AdminList", "Admin")</li>
+			</ul>
+		</div>*@
+
+	<div class>
+
+	</div>
 
 	@Scripts.Render("~/bundles/jquery")
 	@Scripts.Render("~/bundles/bootstrap")

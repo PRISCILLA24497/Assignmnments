@@ -1,0 +1,50 @@
+﻿@model Admin.Context.Screen
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Screen</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ScreenName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScreenName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.No_Of_Rows)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.No_Of_Rows)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.No_Of_Columns)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.No_Of_Columns)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Theatre.Theatre_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Theatre.Theatre_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Screen_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

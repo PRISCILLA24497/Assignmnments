@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Admin.Context.Screen>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Screen</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Add_Screen")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ScreenName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.No_Of_Rows)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.No_Of_Columns)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Theatre.Theatre_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScreenName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.No_Of_Rows)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.No_Of_Columns)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Theatre.Theatre_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Screen_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Screen_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Screen_ID })
+        </td>
+    </tr>
+}
+
+</table>
