@@ -1,0 +1,68 @@
+﻿@model IEnumerable<OnlineMovieTicketBooking.Models.ticketnew>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+<p style="font-size:20px;color:black;font-weight:bold">
+    @using (Html.BeginForm("Search", "Bookings", FormMethod.Get))
+    {<b style="font-size:20px;color:black;font-weight:bold"> Enter Your Booking Id</b>
+        @Html.TextBox("search") <input type="submit" value=" Search" />
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Movienew.mname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatType1.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shownew.showname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Theatrenew.tname)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model.Count() == 0)
+    {
+
+        <tr>
+            <td colspan="5" style="font-size:15px;color:darkblue;font-weight:bold">
+                No record found
+            </td>
+        </tr>
+
+    }
+    else
+    {
+
+
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movienew.mname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatType1.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shownew.showname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Theatrenew.tname)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Tid }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Tid }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Tid })
+            </td>
+        </tr>
+        }
+    }
+</table>

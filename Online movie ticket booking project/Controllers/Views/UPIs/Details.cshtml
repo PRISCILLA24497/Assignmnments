@@ -1,0 +1,42 @@
+﻿@model OnlineMovieTicketBooking.Models.UPI
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UPI</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UPIId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPIId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UPIPIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UPIPIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.num }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

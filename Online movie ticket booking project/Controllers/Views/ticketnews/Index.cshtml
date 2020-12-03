@@ -1,0 +1,73 @@
+﻿@model IEnumerable<OnlineMovieTicketBooking.Models.ticketnew>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Movienew.mname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatType1.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shownew.showname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Theatrenew.tname)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.SeatType1.Price)</th>
+        <th>@Html.DisplayNameFor(model => model.Theatrenew.Screenid)</th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Shownew.starttime)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.Shownew.endtime)</th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movienew.mname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatType1.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shownew.showname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Theatrenew.tname)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.SeatType1.Price)</td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Theatrenew.Screenid)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shownew.starttime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Shownew.endtime)
+            </td>
+            <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Tid }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Tid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Tid })
+            </td>
+        </tr>
+    }
+
+</table>
