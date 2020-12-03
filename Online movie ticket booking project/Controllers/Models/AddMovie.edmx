@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OnlineMovieTicketModel10.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Movie1new">
+          <Key>
+            <PropertyRef Name="Movie_ID" />
+          </Key>
+          <Property Name="Movie_ID" Type="int" Nullable="false" />
+          <Property Name="Movie_Name" Type="varchar" MaxLength="30" />
+          <Property Name="Genre" Type="varchar" MaxLength="70" />
+          <Property Name="Director" Type="varchar" MaxLength="50" />
+          <Property Name="Movie_Length" Type="time" Precision="7" />
+          <Property Name="Languages" Type="varchar" MaxLength="60" />
+          <Property Name="ReleaseDate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="OnlineMovieTicketModel10StoreContainer">
+          <EntitySet Name="Movie1new" EntityType="Self.Movie1new" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineMovieTicketModel10" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Movie1new">
+          <Key>
+            <PropertyRef Name="Movie_ID" />
+          </Key>
+          <Property Name="Movie_ID" Type="Int32" Nullable="false" />
+          <Property Name="Movie_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Genre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Director" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Movie_Length" Type="Time" Precision="7" />
+          <Property Name="Languages" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ReleaseDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="KeyEntites" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Movie1new" EntityType="Self.Movie1new" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineMovieTicketModel10StoreContainer" CdmEntityContainer="KeyEntites">
+          <EntitySetMapping Name="Movie1new">
+            <EntityTypeMapping TypeName="OnlineMovieTicketModel10.Movie1new">
+              <MappingFragment StoreEntitySet="Movie1new">
+                <ScalarProperty Name="Movie_ID" ColumnName="Movie_ID" />
+                <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Director" ColumnName="Director" />
+                <ScalarProperty Name="Movie_Length" ColumnName="Movie_Length" />
+                <ScalarProperty Name="Languages" ColumnName="Languages" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

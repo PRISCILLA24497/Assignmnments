@@ -1,0 +1,128 @@
+﻿@model OnlineMovieTicketBooking.Models.Tbl_Theater
+
+@{
+                /**/
+
+                ViewBag.Title = "SearchMovie";
+}
+
+
+<h2 style="color:navy">SearchMovie</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <h4 style="color:deeppink">@Html.LabelFor(model => model.TheaterId, htmlAttributes: new { @class = "control-label col-md-2" })</h4>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model=>model.TheaterId,new List<SelectListItem>
+               {
+               new SelectListItem{Text="10523",Value="10523"},
+               new SelectListItem{Text="10578",Value="10578"},
+               new SelectListItem{Text="10798",Value="10798"},
+               new SelectListItem{Text="20764",Value="20764"} },
+                "Please Select")
+                @Html.ValidationMessageFor(model => model.TheaterId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4 style="color:deeppink">@Html.LabelFor(model => model.TheaterName, htmlAttributes: new { @class = "control-label col-md-2" })</h4>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model=>model.TheaterName,new List<SelectListItem>
+              {
+              new SelectListItem{Text="Raja Theater",Value="Raja"},
+              new SelectListItem{Text="Satya",Value="Satya"},
+              new SelectListItem{Text="INOX Theater",Value="INOX"},
+              new SelectListItem{Text="Shankara Theater",Value="Shankara"} },
+               "Please Select")
+                @Html.ValidationMessageFor(model => model.TheaterName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4 style="color:deeppink">@Html.LabelFor(model => model.TheaterCity, htmlAttributes: new { @class = "control-label col-md-2" })</h4>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model=>model.TheaterCity,new List<SelectListItem>
+               {
+               new SelectListItem{Text="Visakhapatnam",Value="Visakhapatnam"},
+               new SelectListItem{Text="Hyderabad",Value="Hyderabad"},
+               new SelectListItem{Text="Narsipatnam",Value="Narsipatnam"},
+               new SelectListItem{Text="Banglore",Value="Banglore"} },
+                "Please Select")
+                @Html.ValidationMessageFor(model => model.TheaterCity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4 style="color:deeppink">@Html.LabelFor(model => model.MovieNames, htmlAttributes: new { @class = "control-label col-md-2" })</h4>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model=>model.MovieNames,new List<SelectListItem>
+               {
+               new SelectListItem{Text="Akasham Ni Hadhura",Value="Akasham Ni Hadhura"},
+               new SelectListItem{Text="Bheesma",Value="Bheesma"},
+               new SelectListItem{Text="World Famous Lover",Value="World Famous Lover"},
+               new SelectListItem{Text="Colour Photo",Value="Colour Photo"} },
+                "Please Select")
+                @Html.ValidationMessageFor(model => model.MovieNames, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4 style="color:deeppink">@Html.LabelFor(model => model.ListOfScreens, htmlAttributes: new { @class = "control-label col-md-2" })</h4>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model=>model.ListOfScreens,new List<SelectListItem>
+               {
+               new SelectListItem{Text="Screen1",Value="Screen1"},
+               new SelectListItem{Text="Screen2",Value="Screen2"},
+               new SelectListItem{Text="Screen3",Value="Screen3"},
+               new SelectListItem{Text="Screen4",Value="Screen4"} },
+                "Please Select")
+                @Html.ValidationMessageFor(model => model.ListOfScreens, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4 style="color:deeppink">@Html.LabelFor(model => model.ManagerName, htmlAttributes: new { @class = "control-label col-md-2" })</h4>
+            <div class="col-md-10">
+                @Html.DropDownListFor(model=>model.ManagerName,new List<SelectListItem>
+               {
+               new SelectListItem{Text="Praveen",Value="Praveen"},
+               new SelectListItem{Text="Vijay",Value="Vijay"},
+               new SelectListItem{Text="Arjun",Value="Arjun"},
+               new SelectListItem{Text="Pranay",Value="Pranay"} },
+                "Please Select")
+                @Html.ValidationMessageFor(model => model.ManagerName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <h4><input type="submit" value="Search" class="btn btn-primary" /></h4>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <label style="color:green">@ViewBag.Message</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <label style="color:red">@ViewBag.Notification</label>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

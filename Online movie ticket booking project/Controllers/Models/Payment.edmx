@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OnlineMovieTicketModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NetBanking">
+          <Key>
+            <PropertyRef Name="Netbankingid" />
+          </Key>
+          <Property Name="Netbankingid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardNumber" Type="bigint" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="CVV" Type="int" />
+        </EntityType>
+        <EntityType Name="Transact">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionType" Type="varchar" MaxLength="50" />
+          <Property Name="UPI" Type="int" />
+          <Property Name="Netbanking" Type="int" />
+        </EntityType>
+        <EntityType Name="UPI">
+          <Key>
+            <PropertyRef Name="num" />
+          </Key>
+          <Property Name="num" Type="int" Nullable="false" />
+          <Property Name="UPIId" Type="varchar" MaxLength="50" />
+          <Property Name="UPIPIN" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__Transact__Netban__571DF1D5">
+          <End Role="NetBanking" Type="Self.NetBanking" Multiplicity="0..1" />
+          <End Role="Transact" Type="Self.Transact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetBanking">
+              <PropertyRef Name="Netbankingid" />
+            </Principal>
+            <Dependent Role="Transact">
+              <PropertyRef Name="Netbanking" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transact__UPI__5629CD9C">
+          <End Role="UPI" Type="Self.UPI" Multiplicity="0..1" />
+          <End Role="Transact" Type="Self.Transact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UPI">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="Transact">
+              <PropertyRef Name="UPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnlineMovieTicketModel2StoreContainer">
+          <EntitySet Name="NetBanking" EntityType="Self.NetBanking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transact" EntityType="Self.Transact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UPI" EntityType="Self.UPI" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Transact__Netban__571DF1D5" Association="Self.FK__Transact__Netban__571DF1D5">
+            <End Role="NetBanking" EntitySet="NetBanking" />
+            <End Role="Transact" EntitySet="Transact" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transact__UPI__5629CD9C" Association="Self.FK__Transact__UPI__5629CD9C">
+            <End Role="UPI" EntitySet="UPI" />
+            <End Role="Transact" EntitySet="Transact" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineMovieTicketModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="NetBanking">
+          <Key>
+            <PropertyRef Name="Netbankingid" />
+          </Key>
+          <Property Name="Netbankingid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CardNumber" Type="Int64" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CVV" Type="Int32" />
+          <NavigationProperty Name="Transacts" Relationship="Self.FK__Transact__Netban__571DF1D5" FromRole="NetBanking" ToRole="Transact" />
+        </EntityType>
+        <EntityType Name="Transact">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPI" Type="Int32" />
+          <Property Name="Netbanking" Type="Int32" />
+          <NavigationProperty Name="NetBanking1" Relationship="Self.FK__Transact__Netban__571DF1D5" FromRole="Transact" ToRole="NetBanking" />
+          <NavigationProperty Name="UPI1" Relationship="Self.FK__Transact__UPI__5629CD9C" FromRole="Transact" ToRole="UPI" />
+        </EntityType>
+        <EntityType Name="UPI">
+          <Key>
+            <PropertyRef Name="num" />
+          </Key>
+          <Property Name="num" Type="Int32" Nullable="false" />
+          <Property Name="UPIId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPIPIN" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Transacts" Relationship="Self.FK__Transact__UPI__5629CD9C" FromRole="UPI" ToRole="Transact" />
+        </EntityType>
+        <Association Name="FK__Transact__Netban__571DF1D5">
+          <End Role="NetBanking" Type="Self.NetBanking" Multiplicity="0..1" />
+          <End Role="Transact" Type="Self.Transact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetBanking">
+              <PropertyRef Name="Netbankingid" />
+            </Principal>
+            <Dependent Role="Transact">
+              <PropertyRef Name="Netbanking" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transact__UPI__5629CD9C">
+          <End Role="UPI" Type="Self.UPI" Multiplicity="0..1" />
+          <End Role="Transact" Type="Self.Transact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UPI">
+              <PropertyRef Name="num" />
+            </Principal>
+            <Dependent Role="Transact">
+              <PropertyRef Name="UPI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnlineMovieTicketEntities14" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NetBankings" EntityType="Self.NetBanking" />
+          <EntitySet Name="Transacts" EntityType="Self.Transact" />
+          <EntitySet Name="UPIs" EntityType="Self.UPI" />
+          <AssociationSet Name="FK__Transact__Netban__571DF1D5" Association="Self.FK__Transact__Netban__571DF1D5">
+            <End Role="NetBanking" EntitySet="NetBankings" />
+            <End Role="Transact" EntitySet="Transacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transact__UPI__5629CD9C" Association="Self.FK__Transact__UPI__5629CD9C">
+            <End Role="UPI" EntitySet="UPIs" />
+            <End Role="Transact" EntitySet="Transacts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineMovieTicketModel2StoreContainer" CdmEntityContainer="OnlineMovieTicketEntities14">
+          <EntitySetMapping Name="NetBankings">
+            <EntityTypeMapping TypeName="OnlineMovieTicketModel2.NetBanking">
+              <MappingFragment StoreEntitySet="NetBanking">
+                <ScalarProperty Name="Netbankingid" ColumnName="Netbankingid" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CVV" ColumnName="CVV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transacts">
+            <EntityTypeMapping TypeName="OnlineMovieTicketModel2.Transact">
+              <MappingFragment StoreEntitySet="Transact">
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="UPI" ColumnName="UPI" />
+                <ScalarProperty Name="Netbanking" ColumnName="Netbanking" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UPIs">
+            <EntityTypeMapping TypeName="OnlineMovieTicketModel2.UPI">
+              <MappingFragment StoreEntitySet="UPI">
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="UPIId" ColumnName="UPIId" />
+                <ScalarProperty Name="UPIPIN" ColumnName="UPIPIN" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

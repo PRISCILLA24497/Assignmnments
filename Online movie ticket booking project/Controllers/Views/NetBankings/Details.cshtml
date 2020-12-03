@@ -1,0 +1,42 @@
+﻿@model OnlineMovieTicketBooking.Models.NetBanking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NetBanking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CVV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CVV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Netbankingid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

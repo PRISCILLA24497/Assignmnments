@@ -1,0 +1,66 @@
+﻿@model OnlineMovieTicketBooking.Models.tbl_Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieGenre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieGenre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieDirector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieDirector)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieLength)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieLength)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Languages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Languages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MovieId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

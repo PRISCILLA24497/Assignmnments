@@ -1,0 +1,78 @@
+﻿@model OnlineMovieTicketBooking.Models.Seattbl
+
+@{
+    ViewBag.Title = "Book_Seat";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <h4>@Html.LabelFor(model => model.SeatId, htmlAttributes: new { @class = "control-label col-md-2" })</h4>
+            <div class="col-md-10">
+                <div id="y"></div>
+                choose your seats:<br />
+                <form name="SeatId" method="post">
+                    <input type="checkbox" id="radio-1" class="z" name="chck1" onclick="updateCount()" />01
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />02
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />03
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />04
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />05<br />
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />06
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />07
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />08
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />09
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />10<br />
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />11
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />12
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />13
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />14
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />15<br />
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />16
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />17
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />18
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />19
+                    <input type="checkbox" id="radio-2" class="z" name="chck2" onclick="updateCount()" />20
+                </form>
+                @Html.ValidationMessageFor(model => model.SeatId, "", new { @class = "text-danger" })
+            </div>
+            <script>
+                window.updateCount = function () {
+                    var totalseats = 20;
+                    var x = $(".z:checked").length;
+                    if(totalseats-x>0)
+                        window.alert(totalseats - x + " seats are available");
+                    else
+                        window.alert(" seats are unavailable");
+                };
+            </script>
+        </div>
+
+        <div class="form-group">
+            <h4>@Html.LabelFor(model => model.Ticket, htmlAttributes: new { @class = "control-label col-md-2" })</h4>
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.Ticket, "Platinum") Platinum &nbsp;
+                @Html.RadioButtonFor(model => model.Ticket, "Diamond") Diamond &nbsp;
+                @Html.RadioButtonFor(model => model.Ticket, "Silver") Silver
+                @Html.ValidationMessageFor(model => model.Ticket, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <h4><input type="submit" value="Proceed" class="btn btn-primary" /></h4>
+            </div>
+        </div>
+    </div>
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

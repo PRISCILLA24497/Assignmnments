@@ -1,0 +1,17 @@
+﻿@model OnlineMovieTicketBooking.Models.Seattbl
+
+@{
+    ViewBag.Title = "Seat_Menu";
+}
+
+<h2>Seat_Menu</h2>
+
+@Html.Raw(TempData["BookSeatMessage"])
+@Html.Raw(TempData["SigninMessage"])
+
+<div style="text-align:center">
+    <br />
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Book Seat", "Book_Seat")</button><br /><br />
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Block Seat", "Block_Seat")</button><br /><br />
+    <button type="button" class="btn btn-secondary">@Html.ActionLink("Cancel Seat", "Cancel_Seat")</button><br /><br />
+</div>
